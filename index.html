@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="CSS/style.css">
+
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  
+
+    <title>DiceGame</title>
+  </head>
+
+  <body  style="background-color:#10375c;">
+
+    <div class="container-fluid">
+
+      <br>
+        <h2 class="display-4 text-center d-block shadow p-3 mb-5" style="color:white; font-family: 'Dancing Script', 
+        cursive; background-color: black;"><img src="Assest/img2.jpg" width="70px" height="70px"> Welcome To Dice Game
+        <img src="Assest/img2.jpg" width="70px" height="70px"></h2>
+    
+        <br>
+
+        <h3 class="display-5 text-center" style="color:#abf0e9;">Let's Play Game</h3>
+
+        <br><br>
+
+        <div class="row">
+
+            <div class="col-lg-2"></div>
+    
+            <div class="col-lg-4">
+
+                <h3 class="display-6 text-center" style="color:#abf0e9;">Player-1</h3>
+
+                <br>
+
+                <img class="rounded mx-auto d-block" id="img1" src="Assest/dice1.png" style="margin: auto;" alt="dice-image">
+    
+            </div>
+
+            <br>
+    
+            <div class="col-lg-4">
+
+                <h3 class="display-6 text-center" style="color:#abf0e9;">Player-2</h3>
+
+                <br>
+
+                <img class="rounded mx-auto d-block" id="img2" src="Assest/dice1.png" style="margin: auto;" alt="dice-image">
+    
+            </div>
+    
+            <div class="col-lg-2"></div>
+    
+        </div>
+
+        <br><br><br>
+
+        <div class="col-lg-12">
+
+            <button onclick="Dice()"type="button" class="btn btn-light btn-lg mx-auto d-block">Click Here</button>
+
+        </div>
+
+        <br><br>
+
+    </br>
+
+
+
+    <script>
+
+       function Dice()
+       {
+            var random1 = Math.ceil(Math.random()*6);
+            var random2 = Math.ceil(Math.random()*6);
+            var img1="Assest/dice"+random1+".png";
+            var img2="Assest/dice"+random2+".png";
+
+
+            document.querySelectorAll("#img1")[0].setAttribute("src",img1);
+            document.querySelectorAll("#img2")[0].setAttribute("src",img2);
+
+            if(random1 > random2)
+            {
+                document.querySelectorAll("h3")[0].innerHTML = "Player-1 Won !!";
+            }
+            else if(random1 < random2)
+            {
+                document.querySelectorAll("h3")[0].innerHTML = "Player-2 Won !!";
+            }
+            else
+            {
+                document.querySelectorAll("h3")[0].innerHTML = "Match Draw !!";
+            }
+       }
+
+    </script>
+
+    </body>
+</html>
